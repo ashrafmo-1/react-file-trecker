@@ -1,33 +1,42 @@
 {
     "name": "react-file-trecker",
-    "displayName": "react-file-trecker",
-    "description": "this extiontion trech your export file react",
-    "version": "0.0.1",
+    "displayName": "React File Trecker",
+    "description": "Find and track React imports in your workspace",
+    "version": "0.0.2",
     "engines": {
-        "vscode": "^1.102.0"
+        "vscode": "^1.80.0"
     },
-    "categories": ["Other"],
+    "activationEvents": [
+        "onCommand:react-file-trecker.findImports"
+    ],
     "main": "./extension.js",
-    "activationEvents": ["onCommand:react-file-trecker.findImports"],
     "contributes": {
         "commands": [
             {
                 "command": "react-file-trecker.findImports",
-                "title": "Find Import Usages"
+                "title": "Find React Imports"
+            },
+            {
+                "command": "react-file-trecker.openFile",
+                "title": "Open File from Tracker"
             }
-        ]
-    },
-    "scripts": {
-        "lint": "eslint .",
-        "pretest": "npm run lint",
-        "test": "vscode-test"
-    },
-    "devDependencies": {
-        "@types/vscode": "^1.102.0",
-        "@types/mocha": "^10.0.10",
-        "@types/node": "20.x",
-        "eslint": "^9.25.1",
-        "@vscode/test-cli": "^0.0.11",
-        "@vscode/test-electron": "^2.5.2"
+        ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "reactFileTreckerSidebar",
+                    "title": "React Tracker",
+                    "icon": "media/icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "reactFileTreckerSidebar": [
+                {
+                    "id": "reactFileTreckerView",
+                    "name": "Tracker Panel"
+                }
+            ]
+        }
     }
 }
