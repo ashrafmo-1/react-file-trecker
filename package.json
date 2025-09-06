@@ -1,6 +1,11 @@
 {
     "name": "react-file-trecker",
+    "publisher": "ashrafmo-1",
     "displayName": "React File Trecker",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ashrafmo-1/react-file-trecker.git"
+    },
     "description": "Find and track React imports in your workspace",
     "version": "0.0.2",
     "engines": {
